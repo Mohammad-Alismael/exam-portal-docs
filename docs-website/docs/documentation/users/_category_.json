@@ -1,0 +1,8 @@
+{
+  "label": "Users",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "this section for handling user's endpoints"
+  }
+}

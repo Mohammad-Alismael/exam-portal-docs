@@ -1,0 +1,8 @@
+{
+  "label": "Exams",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "this section for handling exam's endpoints"
+  }
+}

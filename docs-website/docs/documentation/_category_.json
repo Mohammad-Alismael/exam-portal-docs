@@ -1,0 +1,8 @@
+{
+  "label": "API - Documentation",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "EMS is a comprehensive software solution designed for use in educational institutions such as schools and universities. \nIts primary function is to streamline the process of online examinations by providing a robust platform for checking \nstudent fundamentals. EMS is implemented as a web application, providing easy accessibility for both students and \ninstructors via the internet."
+  }
+}
