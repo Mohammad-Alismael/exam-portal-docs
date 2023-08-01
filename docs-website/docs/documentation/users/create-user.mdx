@@ -1,0 +1,47 @@
+---
+sidebar_position: 3
+---
+
+# Create User
+
+user creation
+
+### **API Endpoint**
+
+```http
+  POST /users/create
+```
+
+#### Request body object
+
+| Parameter  | Type     | Description                                 |
+| :--------- | :------- | :------------------------------------------ |
+| `username` | `string` | **Required**. username feild must be filled |
+| `password` | `string` | **Required**. password feild must be filled |
+| `email_id` | `string` | **Required**. email id feild must be filled |
+| `role id` | `integer` | **Required**. role id feild must be filled, read more about [user types](http://localhost:3000/documentation/users/user-types) |
+
+#### **Request body**
+
+```json
+{
+    "username": "user",
+    "password": "123",
+    "email_id": "user@gmail.com",
+    "role_id": 1
+}
+```
+
+#### **Response body**
+
+it will return access token, along with refresh token but refresh token is stored inside http-only cookie
+
+```json
+{
+  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6ImFkbWluIiwicm9sZV9pZCI6IjMiLCJpYXQiOjE2OTA4Mjg2NTgsImV4cCI6MTY5MDgyOTU1OH0.pW4wsVK4fZioe-Y5e7TB7k5Q038QV_R1__ZTYX7FHrU"
+}
+```
+
+## Errors
+
+### email address is taken
