@@ -1,0 +1,84 @@
+---
+sidebar_position: 2
+---
+
+export const Template = ({ description, status = 404 }) => (
+    <>
+        <p>{description}</p>
+        <p style={{fontWeight: 'bold'}}>status: {status}</p>
+    </>
+);
+
+
+
+
+this page for authentication
+
+### **API Endpoint**
+
+```http
+  POST /users/auth
+```
+
+#### Request body object
+
+| Parameter  | Type     | Description                                 |
+| :--------- | :------- | :------------------------------------------ |
+| `username` | `string` | **Required**. username feild must be filled |
+| `password` | `string` | **Required**. password feild must be filled |
+
+#### **Request body**
+
+```json
+{
+  "username": "admin",
+  "password": "123"
+}
+```
+
+#### **Response body**
+
+it will return access token, along with refresh token but refresh token is stored inside http-only cookie
+
+```json
+{
+  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6ImFkbWluIiwicm9sZV9pZCI6IjMiLCJpYXQiOjE2OTA4Mjg2NTgsImV4cCI6MTY5MDgyOTU1OH0.pW4wsVK4fZioe-Y5e7TB7k5Q038QV_R1__ZTYX7FHrU"
+}
+```
+
+## Errors
+
+### user do not exist
+<Template
+    header="user do not exist"
+    status={402}
+    description="if the user do not exist on our system, it will return the following:"
+/>
+
+```json
+{
+  "message": "user not found"
+}
+```
+### password incorrect
+<Template
+    status={402}
+    description="if the user entered unmatched password, it will return the following:"
+/>
+
+```json
+{
+  "message": "password incorrect!"
+}
+```
+### Email not activated
+<Template
+    status={401}
+    description="if the user is active did not verify his/her email, it will show the following:"
+/>
+
+```json
+{
+  "message": "your email is not activated!"
+}
+```
