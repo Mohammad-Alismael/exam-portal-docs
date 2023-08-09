@@ -2,10 +2,11 @@
 sidebar_position: 3
 ---
 
+import {Template} from "./Authentication.mdx";
+
 # Create User
 
-user creation
-
+User creation is a fundamental process in any system or application that involves registering new users or accounts. It allows individuals to gain access to various features, services, or functionalities offered by the platform.
 ### **API Endpoint**
 
 ```http
@@ -44,4 +45,26 @@ it will return access token, along with refresh token but refresh token is store
 
 ## Errors
 
-### email address is taken
+### Email address is taken
+<Template
+    status={409}
+    description="if the user provided an already existed email address, it will return the following:"
+/>
+
+```json
+{
+    "message": "email address already taken by another user!"
+}
+```
+
+### Username is taken
+<Template
+    status={409}
+    description="if the user provided an already existed username, it will return the following:"
+/>
+
+```json
+{
+    "message": "username already taken!"
+}
+```

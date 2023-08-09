@@ -1,0 +1,55 @@
+---
+sidebar_position: 4
+---
+
+import { Template } from "./Authentication.mdx";
+
+# Email Verification
+
+To activate their accounts, users need to click on a unique activation link sent to their registered email address.
+Upon receiving the activation email, users can simply click on the provided link to be redirected back to our system,
+where their account activation will be confirmed. This process ensures that users' accounts are securely activated and
+ready for use on our platform. the link has 30min expiry period
+
+### **API Endpoint**
+
+```http
+  POST /users/activate
+```
+
+#### Request body object
+
+| Parameter     | Type     | Description                                                                    |
+| :------------ | :------- | :----------------------------------------------------------------------------- |
+| `email_token` | `string` | **Required**. email token will be sent via url link and it will hit this route |
+
+#### **Request body**
+
+```json
+{
+  "email_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0LCJpYXQiOjE2OTA5MDM5MjEsImV4cCI6MTY5MDkwNTcyMX0.jZ8uY6acTy_ikWbtkXrxWg3_FlkZ64Sg8DoiPnm1pM4"
+}
+```
+
+#### **Response body**
+
+```json
+{
+    "message": "account activated successfully!"
+}
+```
+
+## Errors
+
+### Invalid or expired token
+
+<Template
+  status={403}
+  description="this endpoint is used to activate a user's account by verifying the email token provided in the request body. If the token is valid and matches the user's email token in the database, the user's account is marked as confirmed and a success message is returned. Otherwise, an error message is returned."
+/>
+
+```json
+{
+  "message": "invalid or expired token"
+}
+```

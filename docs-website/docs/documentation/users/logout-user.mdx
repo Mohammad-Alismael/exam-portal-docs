@@ -1,0 +1,15 @@
+---
+sidebar_position: 8
+---
+
+import {Template} from "./Authentication.mdx";
+
+
+# Logout User
+
+The `logout` function is responsible for removing the refresh token from the database and clearing the JWT cookie. It returns a success message if the logout is successful, otherwise it returns an error message.
+### **API Endpoint**
+
+```http
+  POST /users/logout
+```

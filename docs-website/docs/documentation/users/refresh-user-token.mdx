@@ -1,0 +1,15 @@
+---
+sidebar_position: 7
+---
+import {Template} from "./Authentication.mdx";
+
+# Refresh User Token
+
+The `refresh` function is used to generate a new access token using a refresh token. It verifies the refresh token, extracts the user information from it, and then generates a new access token using the extracted user information.
+
+### **API Endpoint**
+
+```http
+  POST /users/refresh
+```
+
